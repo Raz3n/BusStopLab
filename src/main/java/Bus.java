@@ -33,4 +33,8 @@ public class Bus {
             this.addPassenger(person);
         }
     }
+
+    public void removePassenger() {
+        this.passengers.remove(0);
+    }
 }

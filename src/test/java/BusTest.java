@@ -57,5 +57,12 @@ public class BusTest {
 
     }
 
+    @Test
+    public void removePassengerFromBus() {
+        bus.addPassengerIfSpace(person);
+        bus.removePassenger();
+        assertEquals(0, bus.passengerCount());
+    }
+
 
 }
