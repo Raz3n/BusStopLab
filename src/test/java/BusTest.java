@@ -8,11 +8,13 @@ public class BusTest {
 
     private Bus bus;
     private Person person;
+    private Bus minibus;
 
     @Before
     public void before() {
         bus = new Bus("Ocean Terminal", 10);
         person = new Person();
+
     }
 
     @Test
@@ -35,4 +37,25 @@ public class BusTest {
         bus.addPassenger(person);
         assertEquals(1, bus.passengerCount());
     }
+
+    @Test
+    public void hasCapacityForAnotherPassenger() {
+        bus.addPassengerIfSpace(person);
+        bus.addPassengerIfSpace(person);
+
+        assertEquals(2, bus.passengerCount());
+    }
+
+    @Test
+    public void doesNotHaveCapacityForPassenger() {
+        minibus = new Bus("Haymarket", 2);
+        minibus.addPassengerIfSpace(person);
+        minibus.addPassengerIfSpace(person);
+        minibus.addPassengerIfSpace(person);
+
+        assertEquals(2, minibus.passengerCount());
+
+    }
+
+
 }
