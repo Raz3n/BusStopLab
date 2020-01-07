@@ -74,5 +74,12 @@ public class BusTest {
         assertEquals(0, busStop.queueCount());
     }
 
+    @Test
+    public void doesNotPickUpIfStopIsEmpty(){
+        bus.pickUpPassengerFromStop(busStop);
+        assertEquals(0, bus.passengerCount());
+        assertEquals(0, busStop.queueCount());
+    }
+
 
 }

@@ -39,8 +39,9 @@ public class Bus {
     }
 
     public void pickUpPassengerFromStop(BusStop busStop) {
-        Person person = busStop.removePerson();
-        this.addPassengerIfSpace(person);
-
+        if (busStop.queueCount() > 0) {
+            Person person = busStop.removePerson();
+            this.addPassengerIfSpace(person);
+        }
     }
 }
