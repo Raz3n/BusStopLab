@@ -11,7 +11,6 @@ public class BusTest {
     @Before
     public void before() {
         bus = new Bus("Ocean Terminal", 10);
-
     }
 
     @Test
@@ -22,5 +21,10 @@ public class BusTest {
     @Test
     public void hasCapacity() {
         assertEquals(10, bus.getCapacity());
+    }
+
+    @Test
+    public void busStartsEmpty() {
+        assertEquals(0, bus.passengerCount());
     }
 }
