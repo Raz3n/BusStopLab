@@ -21,4 +21,9 @@ public class BusStopTest {
         assertEquals("Elm Row", busStop.getName());
     }
 
+    @Test
+    public void busStopIsEmpty(){
+        assertEquals(0, busStop.queueCount());
+    }
+
 }
